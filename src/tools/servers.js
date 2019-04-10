@@ -1,5 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
+// import db from '../store/user/db';
 import {version} from '../../package'
 
 /**
@@ -44,7 +45,6 @@ export class BaseApi {
    * @returns {Promise<any>} 直接返回数据data
    */
   connection(method = 'GET', url, body, fileList, fileKey = 'files') {
-
     if (typeof body !== 'object') body = {};
     method = method.toLocaleLowerCase();
     if (fileList && (fileList instanceof Array)) {
