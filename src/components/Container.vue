@@ -1,23 +1,54 @@
 <template>
-  <el-container>
-    <el-header >健康养生论坛</el-header>
-    <el-main>
-      Main
-      <!--路由-->
-      <!--<router-view>-->
-      <!--</router-view>-->
-    </el-main>
-    <el-footer>@2019 WYJ</el-footer>
-  </el-container>
+  <a-layout id="components-layout-demo-top" class="layout">
+    <a-layout-header>
+      <div class="logo" />
+      <a-menu
+        theme="dark"
+        mode="horizontal"
+        :defaultSelectedKeys="['2']"
+        :style="{ lineHeight: '64px' }"
+      >
+        <a-menu-item key="1">nav 1</a-menu-item>
+        <a-menu-item key="2">nav 2</a-menu-item>
+        <a-menu-item key="3">nav 3</a-menu-item>
+      </a-menu>
+    </a-layout-header>
+    <a-layout-content style="padding: 0 50px">
+      <a-breadcrumb style="margin: 16px 0">
+        <a-breadcrumb-item>Home</a-breadcrumb-item>
+        <a-breadcrumb-item>List</a-breadcrumb-item>
+        <a-breadcrumb-item>App</a-breadcrumb-item>
+      </a-breadcrumb>
+      <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">Content</div>
+    </a-layout-content>
+    <a-layout-footer style="text-align: center">
+      Ant Design ©2018 Created by Ant UED
+    </a-layout-footer>
+  </a-layout>
 </template>
 
 <script>
   import {ysArticleTypeApi} from '../views/articleType/api';
+  const data = [
+    {
+      title: 'Ant Design Title 1',
+    },
+    {
+      title: 'Ant Design Title 2',
+    },
+    {
+      title: 'Ant Design Title 3',
+    },
+    {
+      title: 'Ant Design Title 4',
+    },
+  ]
   export default {
     name: "Container",
     data() {
       return {
-        article_type: []
+        article_type: [],
+        data
       }
     },
     mounted() {
@@ -36,41 +67,12 @@
 
   }
 </script>
-
-<style scoped>
-  .el-container {
-    width: 100%;
-    height: 100%;
+<style>
+  #components-layout-demo-top .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255,255,255,.2);
+    margin: 16px 24px 16px 0;
+    float: left;
   }
-
-  .el-header, .el-footer {
-    background-color: #100310;
-    color: white;
-    text-align: center;
-    line-height: 60px;
-  }
-  .el-header{
-    font-size: 24px;
-  }
-
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
-
-  body > .el-container {
-    margin-bottom: 40px;
-  }
-
-  .el-container:nth-child(5),
-  .el-container:nth-child(6)  {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(7)  {
-    line-height: 320px;
-  }
-
 </style>

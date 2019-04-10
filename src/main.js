@@ -2,12 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import router from './router'
-import ElementUI from 'element-ui'
+import Antd from 'ant-design-vue'
 import App from './App'
-import 'element-ui/lib/theme-chalk/index.css';
+import 'ant-design-vue/dist/antd.css';
 
-/** 注册 element 组件 */
-Vue.use(ElementUI, {size: 'small'});
+/** 注册 Antd 组件 */
+Vue.use(Antd);
 
 Vue.config.productionTip = false;
 
