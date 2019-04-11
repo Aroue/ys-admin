@@ -18,7 +18,7 @@
           </el-form-item>
 
           <el-button
-            style="width: 60%;"
+            style="width: 40%;"
             type="primary"
             @click="submitForm">
             登录
@@ -50,15 +50,13 @@
     methods: {
 
       submitForm() {
-        console.log(this.formData.userName + " " +  this.formData.password);
         const params = {
           ...this.formData
         };
-        console.log(params)
         ysUserApi.getUser(params).then(res => {
           db.set('user', res.data);
           db.set('login', true);
-          console.log(res.data)
+          this.$router.push({path: '/'})
         }).catch((err) => {
           db.remove('login');
           db.remove('user');
@@ -90,6 +88,7 @@
     -moz-border-radius: 5px;
     background-clip: padding-box;
     width: 25%;
+    height: 30%;
     background: rgba(255, 255, 255, .8);
     position: absolute;
     top: 50%;

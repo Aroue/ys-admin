@@ -1,7 +1,9 @@
 <template>
   <a-layout id="components-layout-demo-top" class="layout" style="height: 100%">
     <a-layout-header>
-      <div class="logo"/>
+      <div class="logo">
+        <img src="../assets/images/logo.png" height="31" width="120"/>
+      </div>
       <a-menu
         theme="dark"
         mode="horizontal"
@@ -32,32 +34,11 @@
 <script>
   import {ysArticleTypeApi} from '../views/articleType/api';
 
-  const data = [
-    {
-      title: 'Ant Design Title 1',
-    },
-    {
-      title: 'Ant Design Title 2',
-    },
-    {
-      title: 'Ant Design Title 3',
-    },
-    {
-      title: 'Ant Design Title 4',
-    },
-    {
-      title: 'Ant Design Title 5',
-    },
-    {
-      title: 'Ant Design Title 6',
-    },
-  ]
   export default {
     name: "Container",
     data() {
       return {
         article_type: [],
-        data
       }
     },
     mounted() {
@@ -70,9 +51,6 @@
           this.article_type = res.data
         })
       },
-      menuKey() {
-        (this.menu_item_key)++
-      }
     },
     computed() {
 
@@ -84,8 +62,8 @@
   #components-layout-demo-top .logo {
     width: 120px;
     height: 31px;
-    background: rgba(255, 255, 255, .2);
-    margin: 16px 24px 16px 0;
+    margin: 16px 0;
     float: left;
+    line-height: 0px;
   }
 </style>

@@ -12,31 +12,10 @@
 
 <script>
   import {ysArticleApi} from './api';
-  const data = [
-    {
-      title: 'Ant Design Title 1',
-    },
-    {
-      title: 'Ant Design Title 2',
-    },
-    {
-      title: 'Ant Design Title 3',
-    },
-    {
-      title: 'Ant Design Title 4',
-    },
-    {
-      title: 'Ant Design Title 5',
-    },
-    {
-      title: 'Ant Design Title 6',
-    },
-  ]
   export default {
     name: "homeArticle",
     data() {
       return {
-        data,
         articles: []
       }
     },
