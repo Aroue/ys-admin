@@ -10,7 +10,7 @@
         :defaultSelectedKeys="['']"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item style="font-family: 'Hiragino Sans GB',serif;font-size: 18px;" :key="i"  v-for="(type,i) in article_type">{{type.title}}</a-menu-item>
+        <a-menu-item style="font-family:serif;font-size: 18px;" :key="i"  v-for="(type,i) in article_type">{{type.title}}</a-menu-item>
       </a-menu>
     </a-layout-header>
     <a-layout-content style="padding: 0 300px;overflow: scroll;">
