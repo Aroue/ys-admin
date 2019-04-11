@@ -16,7 +16,7 @@
         size="large"
         :dataSource="articles"
       >
-        <a-list-item style="padding-left:10px" slot="renderItem" slot-scope="item, index" key="item.title">
+        <a-list-item style="padding-left:10px" slot="renderItem" slot-scope="item, index" key="item.id">
           <template slot="actions" v-for="{type, text} in actions">
         <span :key="type">
           <a-icon :type="type" style="margin-right: 8px"/>
@@ -26,7 +26,7 @@
           <img slot="extra" width="272" alt="logo"
                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"/>
           <a-list-item-meta>
-            <a slot="title">{{item.title}}</a>
+            <p slot="title"><a style="color: rgba(0, 0, 0, 0.65);">{{item.title}}</a><span style="font-size: 14px;padding-left: 56px;color: rgba(0, 0, 0, 0.65);">{{item.createdAt}}</span></p>
             <a-avatar slot="avatar" :src="'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'"/>
           </a-list-item-meta>
           <span class="article-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.content}}</span>
