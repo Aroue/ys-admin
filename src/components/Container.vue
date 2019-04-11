@@ -2,7 +2,7 @@
   <a-layout id="components-layout-demo-top" class="layout" style="height: 100%">
     <a-layout-header style="padding: 0 300px;">
       <div class="logo" >
-        <img src="../assets/images/logo.png" height="31" width="120"/>
+        <a href="/"><img src="../assets/images/logo.png" height="31" width="120"/></a>
       </div>
       <a-menu
         theme="dark"
