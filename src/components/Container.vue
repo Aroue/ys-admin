@@ -1,7 +1,7 @@
 <template>
   <a-layout id="components-layout-demo-top" class="layout" style="height: 100%">
-    <a-layout-header>
-      <div class="logo">
+    <a-layout-header style="padding: 0 300px;">
+      <div class="logo" >
         <img src="../assets/images/logo.png" height="31" width="120"/>
       </div>
       <a-menu
@@ -10,15 +10,11 @@
         :defaultSelectedKeys="['']"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item :key="i"  v-for="(type,i) in article_type">{{type.title}}</a-menu-item>
+        <a-menu-item style="font-family: 'Hiragino Sans GB',serif;font-size: 18px;" :key="i"  v-for="(type,i) in article_type">{{type.title}}</a-menu-item>
       </a-menu>
     </a-layout-header>
-    <a-layout-content style="padding: 0 50px">
-      <a-breadcrumb style="margin: 16px 0">
-        <a-breadcrumb-item>Home</a-breadcrumb-item>
-        <a-breadcrumb-item>Article</a-breadcrumb-item>
-      </a-breadcrumb>
-      <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">
+    <a-layout-content style="padding: 0 300px;overflow: scroll;">
+      <div :style="{ background: '#fff', minHeight: '450px' }">
         <!--路由-->
         <router-view>
         </router-view>
@@ -52,9 +48,6 @@
         })
       },
     },
-    computed() {
-
-    }
 
   }
 </script>
