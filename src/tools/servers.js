@@ -48,7 +48,7 @@ export class BaseApi {
     if (typeof body !== 'object') body = {};
     method = method.toLocaleLowerCase();
     if (fileList && (fileList instanceof Array)) {
-      let headers = {'Content-Type': 'multipart/form-data'};
+      let headers = {'Content-Type': 'multipart/ruleForm-data'};
       const param = new window.FormData();
       for (const key in body) {
         if ({}.hasOwnProperty.call(body, key)) param.append(key, body[key]);

@@ -178,3 +178,8 @@ export function phoneFormat(phone) {
   if (!phone) { return '-'; }
   return phone.replace(/\s/g, '').replace(/(\d{3})(\d{6})(\d{2})/, '$1******$3');
 }
+// 手机号验证
+export function isvalidPhone(str) {
+  const reg = /^1[3|4|5|7|8][0-9]\d{8}$/
+  return reg.test(str)
+}

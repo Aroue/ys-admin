@@ -1,7 +1,7 @@
 <template>
   <a-layout id="components-layout-demo-top" class="layout" style="height: 100%">
     <a-layout-header style="padding: 0 300px;">
-      <div class="logo" >
+      <div class="logo">
         <a href="/"><img src="../assets/images/logo.png" height="31" width="120"/></a>
       </div>
       <a-menu
@@ -10,7 +10,14 @@
         :defaultSelectedKeys="['']"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item style="font-family:serif;font-size: 18px;" :key="i"  v-for="(type,i) in article_type">{{type.title}}</a-menu-item>
+        <a-menu-item style="font-family:serif;font-size: 18px;" :key="i" v-for="(type,i) in article_type">
+          {{type.title}}
+        </a-menu-item>
+        <a-button style="font-family:serif;font-size: 16px;float: right; margin-top: 1%;margin-right: 15px;"
+                  type="primary" @click="register">
+          <a-icon type="plus"/>
+          Register
+        </a-button>
       </a-menu>
     </a-layout-header>
     <a-layout-content style="padding: 0 300px;overflow: scroll;">
@@ -22,7 +29,7 @@
       </div>
     </a-layout-content>
     <a-layout-footer style="text-align: center">
-       WYJ ©2019
+      WYJ ©2019
     </a-layout-footer>
   </a-layout>
 </template>
@@ -32,9 +39,12 @@
 
   export default {
     name: "Container",
+    components: {
+    },
     data() {
       return {
         article_type: [],
+
       }
     },
     mounted() {
@@ -47,6 +57,11 @@
           this.article_type = res.data
         })
       },
+
+      register() {
+        this.$router.push({path: '/login'})
+      }
+
     },
 
   }
