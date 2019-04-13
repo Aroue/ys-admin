@@ -24,7 +24,7 @@
               <span style="font-size: 14px;padding-left: 56px;color: rgba(0, 0, 0, 0.65);">{{item.createdAt}}</span></p>
             <a-avatar slot="avatar" :src="'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'"/>
           </a-list-item-meta>
-          <span class="article-content" v-html="item.content">{{item.content}}</span>
+          <span class="article-content" >{{item.delHTMLTagContent}}</span>
         </a-list-item>
       </a-list>
     </div>
