@@ -5,9 +5,12 @@ import router from './router'
 import Antd from 'ant-design-vue'
 import ElementUI from 'element-ui'
 import App from './App'
+import $ from 'jquery'
 import 'ant-design-vue/dist/antd.css';
 import 'element-ui/lib/theme-chalk/index.css';
 
+
+window.jQuery = window.$ = $;
 /** 注册 Antd 组件 */
 Vue.use(Antd);
 /** 注册 element 组件 */

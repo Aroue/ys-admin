@@ -22,4 +22,9 @@ export class ysArticleApi {
     return ysServer.connection('POST', '/Comment/A03', data)
   }
 
+  // 获取某分类的全部文章
+  static getArticleTypeArticles(data = {}) {
+    return ysServer.connection('POST', '/Article/A05', data)
+  }
+
 }

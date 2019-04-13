@@ -1,7 +1,7 @@
 <template>
   <div>
     <Carousel></Carousel>
-    <div>
+    <div v-if="articles.length !== 0">
       <a-list
         itemLayout="vertical"
         size="large"
@@ -18,16 +18,18 @@
                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"/>
           <a-list-item-meta>
             <p slot="title">
-              <router-link   :to="'/article/' + item.id">
+              <router-link  :to="'/article/' + item.id">
                 <a style="color: rgba(0, 0, 0, 0.65);">{{item.title}}</a>
               </router-link>
               <span style="font-size: 14px;padding-left: 56px;color: rgba(0, 0, 0, 0.65);">{{item.createdAt}}</span></p>
             <a-avatar slot="avatar" :src="'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'"/>
           </a-list-item-meta>
-          <span class="article-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.content}}</span>
+          <span class="article-content">{{item.content}}</span>
         </a-list-item>
       </a-list>
     </div>
+    <div v-if="articles.length === 0" style="text-align: center">暂时没有文章哟！</div>
+
   </div>
 
 </template>

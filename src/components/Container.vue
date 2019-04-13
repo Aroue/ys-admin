@@ -11,17 +11,25 @@
         :style="{ lineHeight: '64px' }"
       >
         <a-menu-item style="font-family:serif;font-size: 18px;" :key="i" v-for="(type,i) in article_type">
-          {{type.title}}
+          <router-link :to="'/article-type/' + type.id">
+            <a style="color: #FFFFFF;">{{type.title}}</a>
+          </router-link>
         </a-menu-item>
-        <a-button style="font-family:serif;font-size: 16px;float: right; margin-top: 1%;margin-right: 15px;"
-                  type="primary" @click="register">
-          <a-icon type="login" />
-          登陆
-        </a-button>
         <a-button style="font-family:serif;font-size: 16px;float: right; margin-top: 1%;margin-right: 15px;"
                   type="primary" @click="register">
           <a-icon type="plus"/>
           注册
+        </a-button>
+        <a-button style="font-family:serif;font-size: 16px;float: right; margin-top: 1%;margin-right: 15px;"
+                  type="primary" @click="register">
+          <a-icon type="login"/>
+          登陆
+        </a-button>
+
+        <a-button style="font-family:serif;font-size: 16px;float: right; margin-top: 1%;margin-right: 15px;"
+                  type="primary" @click="addArticle">
+          <a-icon type="edit" />
+          新建文章
         </a-button>
       </a-menu>
     </a-layout-header>
@@ -44,8 +52,7 @@
 
   export default {
     name: "Container",
-    components: {
-    },
+    components: {},
     data() {
       return {
         article_type: [],
@@ -55,6 +62,9 @@
     mounted() {
       this.getAllArticleType()
     },
+    destroyed() {
+      this.article_type = null
+    },
     methods: {
       getAllArticleType() {
         const params = {}
@@ -62,6 +72,15 @@
           this.article_type = res.data
         })
       },
+
+      addArticle() {
+        this.$router.push({path: '/article/add-article'})
+      },
+
+      articleTypeArticles(id) {
+        this.$router.push({path: '/article-type/' + id})
+      },
+
 
       register() {
         this.$router.push({path: '/login'})

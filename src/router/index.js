@@ -21,10 +21,22 @@ export default new Router({
           component: () => import('../views/article/homeArticle'),
         },
         {
+          path: '/article/add-article',
+          name: 'ys-article_add-detail',
+          meta: {},
+          component: () => import('../views/article/add-article'),
+        },
+        {
           path: '/article/:id',
-          name: 'ys-article-details',
+          name: 'ys_article-details',
           meta: {},
           component: () => import('../views/article/article-details'),
+        },
+        {
+          path: '/article-type/:id',
+          name: 'ys_article-type_articles',
+          meta: {},
+          component: () => import('../views/article/article-type-articles'),
         },
       ]
     }
