@@ -15,8 +15,13 @@
         </a-menu-item>
         <a-button style="font-family:serif;font-size: 16px;float: right; margin-top: 1%;margin-right: 15px;"
                   type="primary" @click="register">
+          <a-icon type="login" />
+          登陆
+        </a-button>
+        <a-button style="font-family:serif;font-size: 16px;float: right; margin-top: 1%;margin-right: 15px;"
+                  type="primary" @click="register">
           <a-icon type="plus"/>
-          Register
+          注册
         </a-button>
       </a-menu>
     </a-layout-header>

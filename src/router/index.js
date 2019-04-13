@@ -19,7 +19,13 @@ export default new Router({
           name: 'ys-home',
           meta: {},
           component: () => import('../views/article/homeArticle'),
-        }
+        },
+        {
+          path: '/article/:id',
+          name: 'ys-article-details',
+          meta: {},
+          component: () => import('../views/article/article-details'),
+        },
       ]
     }
   ]

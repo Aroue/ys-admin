@@ -171,7 +171,6 @@
         }).catch((err) => {
           db.remove('login');
           db.remove('user');
-          // this.resetForm('formData');
           this.$message.error(err.message);
         })
 
@@ -220,7 +219,7 @@
   .ys-login {
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/images/login-background.jpg");
+    background-image: url("../../assets/images/1.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -244,6 +243,7 @@
     text-align: center;
     letter-spacing: 2px;
     color: #505458;
+    min-height: 300px;
   }
 
   .login-form-register {

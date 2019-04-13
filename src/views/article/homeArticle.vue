@@ -1,15 +1,6 @@
 <template>
   <div>
     <Carousel></Carousel>
-    <!--<a-list itemLayout="horizontal" :dataSource="articles" class="article-list">-->
-    <!--<a-list-item slot="renderItem" slot-scope="item, index">-->
-    <!--<a-list-item-meta-->
-    <!--:description="item.content">-->
-    <!--<a slot="title" href="https://vue.ant.design/">{{item.title}}</a>-->
-    <!--<a-avatar slot="avatar" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>-->
-    <!--</a-list-item-meta>-->
-    <!--</a-list-item>-->
-    <!--</a-list>-->
     <div>
       <a-list
         itemLayout="vertical"
@@ -26,7 +17,11 @@
           <img slot="extra" width="272" alt="logo"
                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"/>
           <a-list-item-meta>
-            <p slot="title"><a style="color: rgba(0, 0, 0, 0.65);">{{item.title}}</a><span style="font-size: 14px;padding-left: 56px;color: rgba(0, 0, 0, 0.65);">{{item.createdAt}}</span></p>
+            <p slot="title">
+              <router-link   :to="'/article/' + item.id">
+                <a style="color: rgba(0, 0, 0, 0.65);">{{item.title}}</a>
+              </router-link>
+              <span style="font-size: 14px;padding-left: 56px;color: rgba(0, 0, 0, 0.65);">{{item.createdAt}}</span></p>
             <a-avatar slot="avatar" :src="'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'"/>
           </a-list-item-meta>
           <span class="article-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.content}}</span>
