@@ -62,9 +62,7 @@
     mounted() {
       this.getAllArticleType()
     },
-    destroyed() {
-      this.article_type = null
-    },
+
     methods: {
       getAllArticleType() {
         const params = {}
@@ -76,11 +74,6 @@
       addArticle() {
         this.$router.push({path: '/article/add-article'})
       },
-
-      articleTypeArticles(id) {
-        this.$router.push({path: '/article-type/' + id})
-      },
-
 
       register() {
         this.$router.push({path: '/login'})

@@ -27,4 +27,9 @@ export class ysArticleApi {
     return ysServer.connection('POST', '/Article/A05', data)
   }
 
+  //添加文章
+  static addArticle(data = {}) {
+    return ysServer.connection('POST', '/Article/A02', data)
+  }
+
 }

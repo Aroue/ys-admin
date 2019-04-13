@@ -22,7 +22,7 @@
             <span style="font-size: 14px;padding-left: 56px;color: rgba(0, 0, 0, 0.65);">{{item.createdAt}}</span></p>
           <a-avatar slot="avatar" :src="'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'"/>
         </a-list-item-meta>
-        <span class="article-content">{{item.content}}</span>
+        <span class="article-content" v-html="item.content"></span>
       </a-list-item>
     </a-list>
     <div v-if="articles.length === 0" style="text-align: center">暂时没有文章哟！</div>
@@ -60,9 +60,11 @@
     },
 
     mounted() {
-      // window.reload();
       this.getArticleTypeArticles()
     },
+    watch: {
+      $route: 'getArticleTypeArticles'
+    }
   }
 </script>
 

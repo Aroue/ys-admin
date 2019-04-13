@@ -8,7 +8,7 @@
         <span>发布日期：</span>
         {{article.createdAt}}
       </div>
-      <div class="article-content">
+      <div class="article-content" v-html="article.content">
         {{article.content}}
       </div>
 
