@@ -14,11 +14,7 @@
 
     </div>
     <a-comment>
-      <a-avatar
-        slot="avatar"
-        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-        alt="Han Solo"
-      />
+      <a-avatar slot="avatar" icon="user" />
       <div slot="content">
         <a-form-item>
           <a-textarea :rows="4" @change="handleChange" :value="comment"></a-textarea>
@@ -107,6 +103,7 @@
         }
         ysArticleApi.addComment(params).then(res => {
           this.$message.success('评论添加成功');
+          this.comment = null;
           this.getArticleComments();
         }).catch((err) => {
           this.$message.error('评论添加失败');
@@ -114,7 +111,7 @@
       },
 
       handleChange(e) {
-        this.comment = e.target.value
+        this.comment = e.target.value;
       }
     },
 

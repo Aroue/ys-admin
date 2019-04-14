@@ -20,7 +20,8 @@
               <a style="color: rgba(0, 0, 0, 0.65);">{{item.title}}</a>
             </router-link>
             <span style="font-size: 14px;padding-left: 56px;color: rgba(0, 0, 0, 0.65);">{{item.createdAt}}</span></p>
-          <a-avatar slot="avatar" :src="'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'"/>
+          <!--<a-avatar slot="avatar" :src="'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'"/>-->
+          <a-avatar slot="avatar" icon="user" />
         </a-list-item-meta>
         <span class="article-content" >{{item.delHTMLTagContent}}</span>
       </a-list-item>
