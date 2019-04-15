@@ -96,18 +96,25 @@
 
       // 添加评论
       addComment() {
-        const params = {
-          userId: db.get('user').id,
-          content: this.comment,
-          articleId: this.$route.params.id,
+        if (db.get('login')) {
+          const params = {
+            userId: db.get('user').id,
+            content: this.comment,
+            articleId: this.$route.params.id,
+          }
+          ysArticleApi.addComment(params).then(res => {
+            this.$message.success('评论添加成功');
+            this.comment = null;
+            this.getArticleComments();
+          }).catch((err) => {
+            this.$message.error('评论添加失败');
+          })
         }
-        ysArticleApi.addComment(params).then(res => {
-          this.$message.success('评论添加成功');
-          this.comment = null;
-          this.getArticleComments();
-        }).catch((err) => {
-          this.$message.error('评论添加失败');
-        })
+        else {
+          this.$router.push({path: '/login'})
+          this.$message.error('请您登陆后方可评论');
+        }
+
       },
 
       handleChange(e) {
