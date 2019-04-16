@@ -239,7 +239,7 @@
     left: 50%;
     transform: translate(-50%, -60%);
     overflow: hidden;
-    min-width: 270px;
+    min-width: 430px;
     text-align: center;
     letter-spacing: 2px;
     color: #505458;

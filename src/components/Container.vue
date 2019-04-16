@@ -10,7 +10,7 @@
         :defaultSelectedKeys="['']"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item style="font-family:serif;font-size: 18px;" :key="i" v-for="(type,i) in article_type">
+        <a-menu-item style="font-family:serif;font-size: 18px;padding: 0 10px;" :key="i" v-for="(type,i) in article_type">
           <router-link :to="'/article-type/' + type.id">
             <a style="color: #FFFFFF;">{{type.title}}</a>
           </router-link>
@@ -37,7 +37,7 @@
 
       </div>
     </a-layout-content>
-    <a-layout-footer style="text-align: center">
+    <a-layout-footer style="text-align: center; height:15px ">
       WYJ ©2019
     </a-layout-footer>
   </a-layout>
